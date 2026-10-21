@@ -1,0 +1,169 @@
+@import "tailwindcss";
+
+@theme {
+  --color-void: #050608;
+  --color-graphite: #10141b;
+  --color-slate: #181f29;
+  --color-soft: #f3f5f7;
+  --color-silver: #a7b0bc;
+  --color-chrome: #d8e0e8;
+  --color-ice: #a5f3fc;
+  --color-electric: #4169e1;
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+/* Premium dark atmosphere: faint technical grid + charcoal grain.
+   Kept as shared layers so body and .chrome-gradient stay consistent. */
+:root {
+  --bg-grid-color: rgba(167, 176, 188, 0.05);
+  --bg-grid-size: 48px;
+  --bg-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='0.055'/%3E%3C/svg%3E");
+  --bg-grid-x: linear-gradient(
+    to right,
+    var(--bg-grid-color) 1px,
+    transparent 1px
+  );
+  --bg-grid-y: linear-gradient(
+    to bottom,
+    var(--bg-grid-color) 1px,
+    transparent 1px
+  );
+  --bg-atmosphere:
+    var(--bg-grain),
+    var(--bg-grid-x),
+    var(--bg-grid-y);
+  --bg-atmosphere-size:
+    180px 180px,
+    var(--bg-grid-size) var(--bg-grid-size),
+    var(--bg-grid-size) var(--bg-grid-size);
+}
+
+@layer base {
+  html {
+    scroll-behavior: auto;
+    background-color: var(--color-void);
+  }
+
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--color-void);
+    background-image: var(--bg-atmosphere);
+    background-size: var(--bg-atmosphere-size);
+    background-repeat: repeat;
+    color: var(--color-soft);
+    font-family: var(--font-body);
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--color-ice) 35%, transparent);
+    color: var(--color-soft);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ice);
+    outline-offset: 3px;
+  }
+
+  /* Gate content until GSAP owns entrance — prevents flash under/after loader */
+  html.is-booting #signal [data-hero] {
+    opacity: 0;
+  }
+
+  html:not(.is-ready) main > section:not(#signal) {
+    opacity: 0;
+  }
+
+  .split-word,
+  .split-char-wrap {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+  }
+
+  .split-word-inner,
+  .split-char {
+    display: inline-block;
+    will-change: transform, opacity;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .chrome-gradient {
+    background-color: var(--color-void);
+    background-image:
+      var(--bg-atmosphere),
+      radial-gradient(ellipse 80% 55% at 70% -10%, rgba(165, 243, 252, 0.08), transparent 55%),
+      radial-gradient(ellipse 60% 40% at 10% 20%, rgba(65, 105, 225, 0.07), transparent 50%),
+      linear-gradient(180deg, #050608 0%, #0a0e14 45%, #050608 100%);
+    background-size:
+      var(--bg-atmosphere-size),
+      auto,
+      auto,
+      auto;
+    background-repeat: repeat, repeat, repeat, no-repeat, no-repeat, no-repeat;
+  }
+
+  .metal-line {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(216, 224, 232, 0.35),
+      transparent
+    );
+  }
+
+  .section-pad {
+    @apply px-5 sm:px-8 lg:px-12 xl:px-20;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --bg-grid-size: 36px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.is-booting #signal [data-hero],
+  html:not(.is-ready) main > section:not(#signal) {
+    opacity: 1;
+  }
+
+  .split-word-inner,
+  .split-char {
+    will-change: auto;
+  }
+}

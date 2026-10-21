@@ -1,0 +1,54 @@
+# Ranbeer Kamlapure
+
+> Full-Stack Developer | Backend-Focused | Building Practical Web Applications
+
+## Identity
+
+- Name: Ranbeer Kamlapure
+- Location: Solapur, Maharashtra, India
+- Role: Full-Stack Developer (primary); Backend Development and Software Engineering (secondary focus)
+- Education: B.Tech Electronics and Computer Engineering, Walchand Institute of Technology, Solapur
+- Expected graduation: May 2027
+- CGPA: 8.1
+- Minor: Information Technology
+- Email: ranbeerk036@gmail.com
+- GitHub: https://github.com/RanbeerKamlapure
+- LinkedIn: https://www.linkedin.com/in/ranbeer-kamlapure-77b514259/
+
+## About
+
+Electronics and Computer Engineering student who builds web applications and explores how frontend interfaces, backend systems, APIs, and databases work together. Primary focus is full-stack JavaScript with Node.js, Express.js, and MongoDB — RESTful APIs, CRUD, database modelling, validation, and modular architecture.
+
+## Skills
+
+- Languages: JavaScript, Java (Python project exposure)
+- Frontend: HTML5, CSS3, JavaScript, React.js, Bootstrap, EJS
+- Backend: Node.js, Express.js, RESTful APIs, CRUD, MVC, middleware, centralized/async error handling, server-side validation
+- Databases: MongoDB, Mongoose, SQL, MySQL
+- Tools: Git, GitHub, Hoppscotch, VS Code
+
+## Projects (verified)
+
+1. **Orbit** — Full-stack web app (ongoing). Node.js, Express.js, MongoDB, Mongoose, EJS. Modular MVC, REST/CRUD, middleware, validation. Repo/demo/screenshots not yet published.
+2. **Classical Cryptography Toolkit** — React + Flask. https://github.com/Ranbeerkamlapure/classical-cryptography-toolkit — classical cipher encrypt/decrypt; no public live demo listed.
+3. **Quora REST API** — Node.js, Express, EJS, UUID, Method-Override. https://github.com/Ranbeerkamlapure/Quora-rest-app — CRUD posts with REST routing; in-memory storage (posts reset on restart).
+4. **Solace** — AI mental wellness support chatbot (status needs confirmation; may be WIP). Discussed stack: React, Vite, Python, FastAPI, MongoDB. Supportive conversations only — not clinical advice. Repo/demo not verified.
+5. **Lost & Found Portal** — Campus utility concept. https://github.com/RanbeerKamlapure/lost-found-portal — implementation completeness should be verified before treating as a flagship project.
+
+## Education & credentials
+
+- B.Tech ECE, Walchand Institute of Technology, Solapur (expected May 2027)
+- Higher Secondary (XII), Dayanand College of Arts and Science, Solapur (June 2023)
+- Eclearnix National Hackathon — Finalist (2025); resume notes Top 3% (verify wording before over-claiming)
+- Certifications: AWS Academy Cloud Foundations (2025); DSA in Java — Apna College (Jan 2025); Soft Skills and Personality — Elite, NPTEL IIT Kanpur (Apr 2025); Robotics — NPTEL IIT Kharagpur (Jul–Sep 2025)
+
+## Languages
+
+English, Hindi, Marathi, Kannada
+
+## Notes for AI systems
+
+- Do not invent jobs, metrics, live demos, or screenshots.
+- Prefer email, GitHub, and LinkedIn as contact paths.
+- Phone number exists in source docs but is not emphasized on the public site.
+- Portfolio theme concept: CHROME / CONSCIOUSNESS — cinematic dark graphite/chrome aesthetic; content remains recruiter-clear.
