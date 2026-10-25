@@ -1,5 +1,6 @@
 import { skillGroups, interests } from '../../data/content'
 import SectionHeading from '../SectionHeading'
+import SkillIcon from '../SkillIcon'
 
 export default function Skills() {
   return (
@@ -19,11 +20,11 @@ export default function Skills() {
               </h3>
               <ul className="mt-4 flex flex-wrap gap-2">
                 {group.items.map((item) => (
-                  <li
-                    key={item}
-                    className="border border-white/10 bg-slate/40 px-3 py-1.5 font-mono text-[12px] text-chrome/90 transition-colors hover:border-ice/30 hover:text-ice"
-                  >
-                    {item}
+                  <li key={item}>
+                    <span className="group inline-flex items-center gap-2 border border-white/10 bg-slate/40 px-3 py-1.5 font-mono text-[12px] text-chrome/90 transition-[border-color,color,background-color,transform] duration-200 hover:-translate-y-px hover:border-white/20 hover:bg-slate/65 hover:text-soft">
+                      <SkillIcon name={item} size={16} />
+                      {item}
+                    </span>
                   </li>
                 ))}
               </ul>

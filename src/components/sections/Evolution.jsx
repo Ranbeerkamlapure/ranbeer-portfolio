@@ -11,8 +11,8 @@ export default function Evolution() {
       <div className="mx-auto max-w-7xl">
         <SectionHeading
           eyebrow="The Evolution"
-          title="Education, milestones, and credentials."
-          subtitle="Verified from source documents. Where wording needs confirmation, it is stated plainly."
+          title="Education and credentials."
+          subtitle="Every step, every skill, part of the journey."
         />
 
         <div className="mt-14 grid gap-12 lg:grid-cols-3">

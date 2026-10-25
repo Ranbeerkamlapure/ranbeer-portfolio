@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import { navLinks } from '../data/content'
+import { scrollToSection } from '../lib/scrollToSection'
 import { hoverSpring } from '../motion/tokens'
 
 export default function Nav({ ready, visible = true }) {
@@ -23,9 +24,15 @@ export default function Nav({ ready, visible = true }) {
   }, [open])
 
   const go = (id) => {
+    // Unlock scroll immediately — overflow:hidden still applies until the
+    // open→false effect runs, which would cancel scrollIntoView on mobile.
+    document.body.style.overflow = ''
     setOpen(false)
-    const el = document.getElementById(id)
-    el?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    window.history.pushState(null, '', `#${id}`)
+    // Next frame: menu can start closing and layout is scrollable again.
+    requestAnimationFrame(() => {
+      scrollToSection(id)
+    })
   }
 
   return (

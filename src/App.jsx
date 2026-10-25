@@ -1,4 +1,4 @@
-import { useCallback, useLayoutEffect, useState } from 'react'
+import { useCallback, useEffect, useLayoutEffect, useState } from 'react'
 import Loader from './components/Loader'
 import Nav from './components/Nav'
 import Hero from './components/sections/Hero'
@@ -12,6 +12,7 @@ import { useLenis } from './hooks/useLenis'
 import { usePrefersReducedMotion } from './hooks/usePrefersReducedMotion'
 import { useHeroIntro } from './hooks/useHeroIntro'
 import { useScrollStory } from './hooks/useScrollStory'
+import { scrollToSection } from './lib/scrollToSection'
 
 export default function App() {
   const [booting, setBooting] = useState(true)
@@ -29,6 +30,21 @@ export default function App() {
       document.documentElement.classList.remove('is-booting', 'is-ready')
     }
   }, [booting, ready])
+
+  // Honor deep links / refresh with a section hash once the page is ready
+  useEffect(() => {
+    if (!ready) return undefined
+
+    const scrollHash = () => {
+      const id = window.location.hash.replace(/^#/, '')
+      if (!id) return
+      requestAnimationFrame(() => scrollToSection(id))
+    }
+
+    scrollHash()
+    window.addEventListener('hashchange', scrollHash)
+    return () => window.removeEventListener('hashchange', scrollHash)
+  }, [ready])
 
   const onLoaded = useCallback(() => {
     setBooting(false)

@@ -2,6 +2,7 @@ import { lazy, Suspense } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowDownRight } from 'lucide-react'
 import { profile } from '../../data/content'
+import { scrollToSection } from '../../lib/scrollToSection'
 import { GitHubIcon, LinkedInIcon } from '../Icons'
 import { hoverSpring } from '../../motion/tokens'
 
@@ -9,7 +10,8 @@ const ChromeScene = lazy(() => import('../ChromeScene'))
 
 export default function Hero({ ready }) {
   const scrollTo = (id) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+    window.history.pushState(null, '', `#${id}`)
+    scrollToSection(id)
   }
 
   return (

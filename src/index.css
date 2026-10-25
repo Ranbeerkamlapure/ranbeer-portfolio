@@ -70,6 +70,11 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
+  /* Keep section titles clear of the fixed header on anchor / nav scroll */
+  main > section[id] {
+    scroll-margin-top: 5rem;
+  }
+
   ::selection {
     background: color-mix(in oklab, var(--color-ice) 35%, transparent);
     color: var(--color-soft);
@@ -147,6 +152,12 @@
 
   .section-pad {
     @apply px-5 sm:px-8 lg:px-12 xl:px-20;
+  }
+
+  .skill-icon {
+    display: block;
+    object-fit: contain;
+    image-rendering: -webkit-optimize-contrast;
   }
 }
 

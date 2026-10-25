@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import Lenis from 'lenis'
 import { gsap, ScrollTrigger } from '../motion/timelines'
+import { setLenisInstance } from '../lib/scrollToSection'
 
 export function useLenis({ enabled = true } = {}) {
   const lenisRef = useRef(null)
@@ -8,6 +9,7 @@ export function useLenis({ enabled = true } = {}) {
   useEffect(() => {
     if (!enabled) {
       document.documentElement.classList.remove('lenis', 'lenis-smooth')
+      setLenisInstance(null)
       return undefined
     }
 
@@ -18,6 +20,7 @@ export function useLenis({ enabled = true } = {}) {
       wheelMultiplier: 0.95,
     })
     lenisRef.current = lenis
+    setLenisInstance(lenis)
 
     document.documentElement.classList.add('lenis', 'lenis-smooth')
 
@@ -39,6 +42,7 @@ export function useLenis({ enabled = true } = {}) {
       gsap.ticker.remove(ticker)
       lenis.destroy()
       lenisRef.current = null
+      setLenisInstance(null)
       document.documentElement.classList.remove('lenis', 'lenis-smooth')
     }
   }, [enabled])
