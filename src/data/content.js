@@ -7,12 +7,11 @@ export const profile = {
   headline: 'Full-Stack Developer | Backend-Focused | Building Practical Web Applications',
   identity: 'Full-Stack Developer',
   secondary: 'Backend Development and Software Engineering',
-  narrative:
-    'My mind is the interface. My code is the language. My projects are the evidence.',
   about: [
-    "I'm Ranbeer Kamlapure, an Electronics and Computer Engineering student at Walchand Institute of Technology, Solapur, graduating in 2027. I enjoy building web applications and exploring how frontend interfaces, backend systems, APIs, and databases work together to solve practical problems.",
-    'My primary focus is full-stack web development, particularly JavaScript, Node.js, Express.js, and MongoDB. Through my projects, I am developing practical experience with RESTful APIs, CRUD operations, database modelling, backend validation, and modular application architecture.',
-    "I'm also interested in problem-solving, software engineering fundamentals, and exploring new technologies through hands-on projects. My goal is to build useful applications, strengthen my technical skills, and develop the ability to design, implement, test, and explain software solutions.",
+    "I'm Ranbeer Kamlapure, an Electronics and Computer Engineering student at Walchand Institute of Technology, Solapur, graduating in 2027. I'm passionate about building practical software applications and understanding the engineering that powers them — from designing intuitive interfaces to developing backend systems and managing data.",
+    'My primary focus is full-stack development, with a strong interest in backend engineering. I work primarily with JavaScript, Node.js, Express.js, and MongoDB, building applications involving RESTful APIs, authentication, database design, and server-side logic.',
+    "Through projects like Orbit, a full-stack property listing platform, and Samjhao, an AI-powered multilingual document explainer, I've gained hands-on experience translating ideas into working applications and solving practical development challenges.",
+    "I'm continuously strengthening my problem-solving abilities, data structures and algorithms, and software engineering fundamentals. I enjoy learning by building, exploring how systems work, and developing solutions that are useful, reliable, and thoughtfully engineered.",
   ],
   languages: ['English', 'Hindi', 'Marathi', 'Kannada'],
 }
@@ -82,18 +81,49 @@ export const projects = [
   {
     id: 'orbit',
     title: 'Orbit',
-    role: 'Full-Stack Web Application',
-    status: 'Ongoing',
+    role: 'Full-Stack Property Listing Platform',
+    status: 'Live Demo',
     priority: 1,
-    stack: ['Node.js', 'Express.js', 'MongoDB', 'Mongoose', 'EJS'],
-    summary:
-      'Modular MVC full-stack application with REST/CRUD flows, Mongoose schemas, reusable middleware, centralized and async error handling, and server-side validation.',
-    notes: [
-      'Primary featured project.',
-      'Verified GitHub URL, live demo, and screenshots are not yet available — listed honestly as ongoing work.',
+    featured: true,
+    stack: [
+      'Node.js',
+      'Express.js',
+      'MongoDB Atlas',
+      'Mongoose',
+      'EJS',
+      'JavaScript',
+      'Passport.js',
+      'Bootstrap 5',
+      'HTML',
+      'CSS',
     ],
-    github: null,
-    demo: null,
+    summary:
+      'An Airbnb-inspired full-stack property rental platform for discovering properties, creating listings, uploading property images, and sharing reviews.',
+    notes: [
+      'Passport.js authentication supports signup, login, and logout; protected listing and review operations control who can manage content.',
+      'Users can create, edit, and delete listings, upload property images, and share reviews and ratings.',
+      'Includes MongoDB-backed session management and flash messages.',
+    ],
+    github: 'https://github.com/Ranbeerkamlapure/Orbit',
+    demo: 'https://orbit-d5q8.onrender.com',
+  },
+  {
+    id: 'samjhao',
+    title: 'Samjhao',
+    role: 'AI-Powered Multilingual Document Explainer',
+    status: 'Live Demo',
+    priority: 2,
+    featured: true,
+    stack: ['React.js', 'Node.js', 'Express.js', 'MongoDB Atlas', 'Gemini API', 'JWT', 'bcrypt.js'],
+    summary:
+      'Built a full-stack document intelligence application that converts complex bills, notices, and agreements into simplified, actionable explanations.',
+    notes: [
+      'Gemini multimodal AI analyzes PDFs and images, extracting summaries, financial amounts, important dates, action steps, and potential warnings.',
+      'Supports English, Hindi, and Marathi, with JWT authentication, bcrypt password hashing, and user-specific document history.',
+      'Protected REST APIs support document processing and history retrieval; the app uses MongoDB Atlas and Mongoose.',
+    ],
+    github: 'https://github.com/Ranbeerkamlapure/Samjhao',
+    demo: 'https://samjhao-five.vercel.app/',
   },
   {
     id: 'quora',

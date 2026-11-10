@@ -1,4 +1,5 @@
 import { mindPoints } from '../../data/content'
+import NetworkField from '../NetworkField'
 import SectionHeading from '../SectionHeading'
 
 export default function Mind() {
@@ -6,9 +7,10 @@ export default function Mind() {
     <section
       id="mind"
       data-section
-      className="section-pad relative border-t border-white/5 py-24 sm:py-32"
+      className="section-pad section-rule relative overflow-hidden py-28 sm:py-36 lg:py-40"
     >
-      <div className="mx-auto max-w-7xl">
+      <NetworkField />
+      <div className="relative z-10 mx-auto max-w-7xl">
         <SectionHeading
           eyebrow="The Mind"
           title="How I learn and build."
@@ -20,7 +22,7 @@ export default function Mind() {
             <li
               key={point.title}
               data-reveal-block
-              className="border border-white/8 bg-graphite/50 p-6 sm:p-7"
+              className="border border-white/8 bg-graphite/55 p-6 backdrop-blur-[2px] sm:p-7"
             >
               <span className="font-mono text-[11px] tabular-nums text-ice/70">
                 {String(index + 1).padStart(2, '0')}

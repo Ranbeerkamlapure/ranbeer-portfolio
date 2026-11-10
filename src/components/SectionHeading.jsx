@@ -11,7 +11,8 @@ export default function SectionHeading({ eyebrow, title, subtitle }) {
       )}
       <h2
         data-reveal-heading
-        className="mt-3 font-display text-3xl font-medium tracking-tight text-soft text-balance sm:text-4xl lg:text-5xl"
+        data-split-title
+        className="mt-3 font-display text-3xl font-medium tracking-[-0.035em] text-soft text-balance sm:text-4xl lg:text-[2.85rem] lg:leading-[1.08]"
       >
         {title}
       </h2>

@@ -16,4 +16,4 @@ export const duration = {
 
 export const framerEase = [0.22, 1, 0.36, 1]
 
-export const hoverSpring = { type: 'spring', stiffness: 420, damping: 28, mass: 0.6 }
+export const hoverSpring = { type: 'spring', stiffness: 360, damping: 30, mass: 0.7 }

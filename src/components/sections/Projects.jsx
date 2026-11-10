@@ -10,8 +10,7 @@ export default function Projects() {
     <section
       id="proof"
       data-section
-      className="section-pad relative border-t border-white/5 py-24 sm:py-32"
-      style={{ perspective: '1200px' }}
+      className="section-pad section-rule relative py-28 sm:py-36 lg:py-40"
     >
       <div className="mx-auto max-w-7xl">
         <SectionHeading
@@ -26,16 +25,21 @@ export default function Projects() {
               key={project.id}
               data-project-card
               whileHover={{
-                y: -4,
-                borderColor: 'rgba(165, 243, 252, 0.28)',
-                backgroundColor: 'rgba(16, 20, 27, 0.72)',
+                y: -6,
+                borderColor: 'rgba(165, 243, 252, 0.42)',
+                backgroundColor: 'rgba(16, 20, 27, 0.86)',
+                boxShadow: '0 12px 32px rgba(0, 0, 0, 0.24)',
               }}
               transition={hoverSpring}
-              className="relative grid gap-6 overflow-hidden border border-white/8 bg-graphite/40 p-6 sm:p-8 lg:grid-cols-[auto_1fr_auto] lg:gap-10"
+              className={`group relative grid gap-6 overflow-hidden border p-6 sm:p-8 lg:grid-cols-[auto_1fr_auto] lg:gap-10 ${project.featured ? 'border-ice/20 bg-graphite/55' : 'border-white/8 bg-graphite/40'}`}
             >
               <div
                 data-project-wash
-                className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-ice/70 to-transparent"
+                className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-ice/70 to-iris/50"
+                aria-hidden
+              />
+              <div
+                className="pointer-events-none absolute inset-y-0 -left-1/3 w-1/3 bg-gradient-to-r from-transparent via-white/6 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                 aria-hidden
               />
 
@@ -43,7 +47,7 @@ export default function Projects() {
                 {String(index + 1).padStart(2, '0')}
               </div>
 
-              <div>
+              <div data-project-content>
                 <div className="flex flex-wrap items-center gap-3">
                   <h3
                     data-project-title
@@ -90,14 +94,14 @@ export default function Projects() {
                 </ul>
               </div>
 
-              <div className="flex flex-row gap-3 lg:flex-col lg:items-end">
+              <div data-project-actions className="flex flex-row gap-3 lg:flex-col lg:items-end">
                 {project.github ? (
                   <motion.a
                     href={project.github}
                     target="_blank"
                     rel="noreferrer"
-                    whileHover={{ y: -2, borderColor: 'rgba(165,243,252,0.5)', color: '#a5f3fc' }}
-                    whileTap={{ scale: 0.97 }}
+                    whileHover={{ y: -2, borderColor: 'rgba(165,243,252,0.55)', color: '#a5f3fc' }}
+                    whileTap={{ scale: 0.98 }}
                     transition={hoverSpring}
                     className="inline-flex items-center gap-2 border border-chrome/20 px-3 py-2 font-mono text-[11px] uppercase tracking-[0.14em] text-chrome focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ice"
                   >
@@ -113,8 +117,8 @@ export default function Projects() {
                     href={project.demo}
                     target="_blank"
                     rel="noreferrer"
-                    whileHover={{ y: -2, borderColor: 'rgba(165,243,252,0.5)', color: '#a5f3fc' }}
-                    whileTap={{ scale: 0.97 }}
+                    whileHover={{ y: -2, borderColor: 'rgba(165,243,252,0.55)', color: '#a5f3fc' }}
+                    whileTap={{ scale: 0.98 }}
                     transition={hoverSpring}
                     className="inline-flex items-center gap-2 border border-chrome/20 px-3 py-2 font-mono text-[11px] uppercase tracking-[0.14em] text-chrome focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ice"
                   >

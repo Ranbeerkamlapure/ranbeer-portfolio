@@ -4,7 +4,7 @@ import SkillIcon from '../SkillIcon'
 
 export default function Skills() {
   return (
-    <section id="craft" data-section className="section-pad relative py-24 sm:py-32">
+    <section id="craft" data-section className="section-pad section-rule relative py-28 sm:py-36 lg:py-40">
       <div className="mx-auto max-w-7xl">
         <SectionHeading
           eyebrow="The Craft"
@@ -21,7 +21,7 @@ export default function Skills() {
               <ul className="mt-4 flex flex-wrap gap-2">
                 {group.items.map((item) => (
                   <li key={item}>
-                    <span className="group inline-flex items-center gap-2 border border-white/10 bg-slate/40 px-3 py-1.5 font-mono text-[12px] text-chrome/90 transition-[border-color,color,background-color,transform] duration-200 hover:-translate-y-px hover:border-white/20 hover:bg-slate/65 hover:text-soft">
+                    <span className="group inline-flex items-center gap-2 border border-white/10 bg-slate/40 px-3 py-1.5 font-mono text-[12px] text-chrome/90 transition-[border-color,color,background-color,transform,box-shadow] duration-250 ease-out hover:-translate-y-px hover:border-iris/30 hover:bg-slate/65 hover:text-soft hover:shadow-[0_0_12px_rgba(139,122,255,0.07)] motion-reduce:transition-none motion-reduce:hover:translate-y-0">
                       <SkillIcon name={item} size={16} />
                       {item}
                     </span>

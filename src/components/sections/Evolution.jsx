@@ -6,7 +6,7 @@ export default function Evolution() {
     <section
       id="evolution"
       data-section
-      className="section-pad relative py-24 sm:py-32"
+      className="section-pad section-rule relative py-28 sm:py-36 lg:py-40"
     >
       <div className="mx-auto max-w-7xl">
         <SectionHeading

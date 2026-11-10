@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useLayoutEffect, useState } from 'react'
+import { MotionConfig } from 'framer-motion'
 import Loader from './components/Loader'
 import Nav from './components/Nav'
 import Hero from './components/sections/Hero'
@@ -52,18 +53,20 @@ export default function App() {
   }, [])
 
   return (
-    <>
-      <Loader active={booting} onDone={onLoaded} />
-      <Nav ready={ready} visible={ready || reducedMotion} />
-      <main>
-        <Hero ready={ready} />
-        <About />
-        <Mind />
-        <Skills />
-        <Projects />
-        <Evolution />
-        <Contact />
-      </main>
-    </>
+    <MotionConfig reducedMotion="user">
+      <>
+        <Loader active={booting} onDone={onLoaded} />
+        <Nav ready={ready} visible={ready || reducedMotion} />
+        <main>
+          <Hero />
+          <About />
+          <Mind />
+          <Skills />
+          <Projects />
+          <Evolution />
+          <Contact />
+        </main>
+      </>
+    </MotionConfig>
   )
 }

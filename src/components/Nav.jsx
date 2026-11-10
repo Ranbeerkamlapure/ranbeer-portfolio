@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { Menu, X } from 'lucide-react'
+import { Download, Menu, X } from 'lucide-react'
 import { navLinks } from '../data/content'
 import { scrollToSection } from '../lib/scrollToSection'
 import { hoverSpring } from '../motion/tokens'
@@ -61,7 +61,7 @@ export default function Nav({ ready, visible = true }) {
           Portfolio
         </motion.button>
 
-        <ul className="hidden items-center gap-7 md:flex">
+        <ul className="hidden items-center gap-7 lg:flex">
           {navLinks.map((link) => (
             <li key={link.id}>
               <motion.button
@@ -78,9 +78,18 @@ export default function Nav({ ready, visible = true }) {
           ))}
         </ul>
 
+        <a
+          href="/Ranbeer_Kamlapure_Resume.pdf"
+          download="Ranbeer_Kamlapure_Resume.pdf"
+          className="hidden items-center gap-2 border border-chrome/20 px-3 py-2 font-mono text-[10px] uppercase tracking-[0.14em] text-chrome transition-colors hover:border-ice/50 hover:text-ice focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ice lg:inline-flex"
+        >
+          <Download size={14} aria-hidden="true" />
+          Download Resume
+        </a>
+
         <button
           type="button"
-          className="inline-flex h-10 w-10 items-center justify-center text-chrome md:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center text-chrome lg:hidden"
           aria-expanded={open}
           aria-controls="mobile-nav"
           aria-label={open ? 'Close menu' : 'Open menu'}
@@ -94,7 +103,7 @@ export default function Nav({ ready, visible = true }) {
         {open && (
           <motion.div
             id="mobile-nav"
-            className="overflow-hidden border-t border-white/5 bg-void/95 md:hidden"
+            className="overflow-hidden border-t border-white/5 bg-void/95 lg:hidden"
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
@@ -115,6 +124,17 @@ export default function Nav({ ready, visible = true }) {
                   </motion.button>
                 </li>
               ))}
+              <li>
+                <a
+                  href="/Ranbeer_Kamlapure_Resume.pdf"
+                  download="Ranbeer_Kamlapure_Resume.pdf"
+                  onClick={() => setOpen(false)}
+                  className="inline-flex w-full items-center gap-2 py-3 font-display text-lg text-soft transition-colors hover:text-ice focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ice"
+                >
+                  <Download size={18} aria-hidden="true" />
+                  Download Resume
+                </a>
+              </li>
             </ul>
           </motion.div>
         )}

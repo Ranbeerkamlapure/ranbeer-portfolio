@@ -1,14 +1,11 @@
-import { lazy, Suspense } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowDownRight } from 'lucide-react'
+import { ArrowDownRight, Download } from 'lucide-react'
 import { profile } from '../../data/content'
 import { scrollToSection } from '../../lib/scrollToSection'
 import { GitHubIcon, LinkedInIcon } from '../Icons'
 import { hoverSpring } from '../../motion/tokens'
 
-const ChromeScene = lazy(() => import('../ChromeScene'))
-
-export default function Hero({ ready }) {
+export default function Hero() {
   const scrollTo = (id) => {
     window.history.pushState(null, '', `#${id}`)
     scrollToSection(id)
@@ -20,10 +17,6 @@ export default function Hero({ ready }) {
       data-section
       className="relative flex min-h-[100svh] items-end overflow-hidden chrome-gradient pb-16 pt-28 sm:items-center sm:pb-24 sm:pt-24"
     >
-      <div data-hero="scene" className="pointer-events-none absolute inset-0 -z-10">
-        <Suspense fallback={null}>{ready && <ChromeScene />}</Suspense>
-      </div>
-
       <div className="section-pad relative z-10 mx-auto grid w-full max-w-7xl gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:items-end">
         <div>
           <p
@@ -33,7 +26,7 @@ export default function Hero({ ready }) {
             The Signal
           </p>
 
-          <h1 className="mt-5 font-display text-[clamp(2.75rem,8vw,5.75rem)] font-medium leading-[0.95] tracking-tight text-soft">
+          <h1 className="mt-5 font-display text-[clamp(2.75rem,8vw,5.75rem)] font-medium leading-[0.92] tracking-[-0.045em] text-soft">
             <span data-hero="name" className="block">
               {profile.name}
             </span>
@@ -46,35 +39,39 @@ export default function Hero({ ready }) {
             {profile.headline}
           </p>
 
-          <p
-            data-hero="narrative"
-            className="mt-4 max-w-lg text-base leading-relaxed text-silver"
-          >
-            {profile.narrative}
-          </p>
-
           <div data-hero="ctas" className="mt-9 flex flex-wrap items-center gap-3">
             <motion.button
               type="button"
-              whileHover={{ y: -3, scale: 1.02 }}
-              whileTap={{ scale: 0.97 }}
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.98 }}
               transition={hoverSpring}
               onClick={() => scrollTo('proof')}
-              className="inline-flex items-center gap-2 bg-chrome px-5 py-3 font-mono text-[11px] uppercase tracking-[0.18em] text-void transition-colors hover:bg-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ice"
+              className="chrome-glow inline-flex items-center gap-2 bg-chrome px-5 py-3 font-mono text-[11px] uppercase tracking-[0.18em] text-void transition-colors hover:bg-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ice"
             >
               View projects
               <ArrowDownRight size={16} aria-hidden />
             </motion.button>
             <motion.button
               type="button"
-              whileHover={{ y: -3, borderColor: 'rgba(165,243,252,0.55)', color: '#a5f3fc' }}
-              whileTap={{ scale: 0.97 }}
+              whileHover={{ y: -2, borderColor: 'rgba(165,243,252,0.45)', color: '#a5f3fc' }}
+              whileTap={{ scale: 0.98 }}
               transition={hoverSpring}
               onClick={() => scrollTo('contact')}
               className="inline-flex items-center gap-2 border border-chrome/25 px-5 py-3 font-mono text-[11px] uppercase tracking-[0.18em] text-chrome focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ice"
             >
               Contact
             </motion.button>
+            <motion.a
+              href="/Ranbeer_Kamlapure_Resume.pdf"
+              download="Ranbeer_Kamlapure_Resume.pdf"
+              whileHover={{ y: -1, borderColor: 'rgba(165,243,252,0.4)', color: '#a5f3fc' }}
+              whileTap={{ scale: 0.98 }}
+              transition={hoverSpring}
+              className="inline-flex items-center gap-2 border border-chrome/15 px-4 py-3 font-mono text-[11px] uppercase tracking-[0.16em] text-silver transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ice"
+            >
+              <Download size={15} aria-hidden="true" />
+              Download Resume
+            </motion.a>
           </div>
 
           <div data-hero="socials" className="mt-8 flex items-center gap-5">
@@ -82,7 +79,7 @@ export default function Hero({ ready }) {
               href={profile.github}
               target="_blank"
               rel="noreferrer"
-              whileHover={{ y: -2, color: '#a5f3fc' }}
+              whileHover={{ y: -1, color: '#a5f3fc' }}
               transition={hoverSpring}
               className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.16em] text-silver"
             >
@@ -92,7 +89,7 @@ export default function Hero({ ready }) {
               href={profile.linkedin}
               target="_blank"
               rel="noreferrer"
-              whileHover={{ y: -2, color: '#a5f3fc' }}
+              whileHover={{ y: -1, color: '#a5f3fc' }}
               transition={hoverSpring}
               className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.16em] text-silver"
             >
@@ -104,7 +101,7 @@ export default function Hero({ ready }) {
         <aside className="hidden lg:block" aria-hidden>
           <div
             data-hero="identity"
-            className="relative ml-auto max-w-sm border border-white/8 bg-graphite/40 p-6 backdrop-blur-sm"
+            className="chrome-panel relative ml-auto max-w-sm border border-white/10 bg-graphite/45 p-6 backdrop-blur-sm"
           >
             <p className="font-mono text-[10px] uppercase tracking-[0.24em] text-silver/60">
               Identity

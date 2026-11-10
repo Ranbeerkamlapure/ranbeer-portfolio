@@ -49,8 +49,9 @@ export default function Loader({ onDone, active = true }) {
       aria-label="Loading portfolio"
     >
       <div className="absolute inset-0 chrome-gradient opacity-90" aria-hidden />
+      <div className="pointer-events-none absolute inset-0 dot-field opacity-40" aria-hidden />
       <div
-        className="pointer-events-none absolute inset-x-0 top-0 h-px metal-line opacity-60"
+        className="pointer-events-none absolute inset-x-0 top-0 h-px metal-line opacity-70"
         aria-hidden
       />
       <div className="relative z-10 w-full max-w-sm px-8">
@@ -63,7 +64,7 @@ export default function Loader({ onDone, active = true }) {
         <div className="mt-6 h-px w-full overflow-hidden bg-slate">
           <div
             ref={barRef}
-            className="h-full w-full origin-left bg-gradient-to-r from-chrome/40 via-ice to-chrome/40"
+            className="h-full w-full origin-left bg-gradient-to-r from-chrome/35 via-ice to-iris/70"
           />
         </div>
         <div className="mt-4 flex items-baseline justify-between">

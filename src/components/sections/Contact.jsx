@@ -10,7 +10,7 @@ export default function Contact() {
     <section
       id="contact"
       data-section
-      className="section-pad relative border-t border-white/5 py-24 sm:py-32"
+      className="section-pad section-rule relative py-28 sm:py-36 lg:py-40"
     >
       <div className="mx-auto max-w-7xl">
         <SectionHeading
@@ -22,10 +22,10 @@ export default function Contact() {
         <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:flex-wrap" data-reveal>
           <motion.a
             href={`mailto:${profile.email}`}
-            whileHover={{ y: -3, scale: 1.02 }}
+            whileHover={{ y: -2 }}
             whileTap={{ scale: 0.98 }}
             transition={hoverSpring}
-            className="inline-flex items-center gap-3 bg-chrome px-6 py-4 font-mono text-[12px] uppercase tracking-[0.16em] text-void focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ice"
+            className="chrome-glow inline-flex items-center gap-3 bg-chrome px-6 py-4 font-mono text-[12px] uppercase tracking-[0.16em] text-void focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ice"
           >
             <Mail size={16} /> {profile.email}
           </motion.a>
@@ -33,7 +33,7 @@ export default function Contact() {
             href={profile.github}
             target="_blank"
             rel="noreferrer"
-            whileHover={{ y: -3, borderColor: 'rgba(165,243,252,0.5)', color: '#a5f3fc' }}
+            whileHover={{ y: -1, borderColor: 'rgba(165,243,252,0.45)', color: '#a5f3fc' }}
             whileTap={{ scale: 0.98 }}
             transition={hoverSpring}
             className="inline-flex items-center gap-3 border border-chrome/25 px-6 py-4 font-mono text-[12px] uppercase tracking-[0.16em] text-chrome focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ice"
@@ -44,7 +44,7 @@ export default function Contact() {
             href={profile.linkedin}
             target="_blank"
             rel="noreferrer"
-            whileHover={{ y: -3, borderColor: 'rgba(165,243,252,0.5)', color: '#a5f3fc' }}
+            whileHover={{ y: -1, borderColor: 'rgba(165,243,252,0.45)', color: '#a5f3fc' }}
             whileTap={{ scale: 0.98 }}
             transition={hoverSpring}
             className="inline-flex items-center gap-3 border border-chrome/25 px-6 py-4 font-mono text-[12px] uppercase tracking-[0.16em] text-chrome focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ice"
